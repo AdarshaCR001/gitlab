@@ -7,9 +7,8 @@ import { Router, Link } from "@reach/router";
 import Navbar from './components/NavbarComp';
 import Home from "./components/home.component"
 import Project from "./components/project.component"
-import Issues from './components/Issues';
 import Newissue from './components/Newissue';
-import Markdown from './components/Markdown';
+import Issueslist from './components/Issueslist';
 
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
         <Home path="/" />
         <Project path="project/*" />
         <Newissue path="new" />
-        <Markdown path="markdown" />
+        <Issueslist path="issueslist" />
       </Router>
     </div>
 
