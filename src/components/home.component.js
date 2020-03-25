@@ -33,18 +33,6 @@ export default class Home extends Component {
                         <span className="badge-pill"> 1</span>
                                 </a>
                             </li>
-                            {/* <li className="divtwoli">
-                    <a className="shortcuts-activity" data-placemant="right" href="#">
-                        Stared projects
-                        <span className="badge-pill">0</span>
-                    </a>
-            </li>
-            <li className="divtwoli">
-                    <a className="shortcuts-activity" data-placemant="right" href="#">
-                        Explored projects
-                       
-                    </a>
-            </li> */}
                         </ul>
                         <div className="divtwotop">
                             <form className="divtwoform" method="get">
