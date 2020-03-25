@@ -1,53 +1,29 @@
 import React from 'react'
+import { Button, Container, Row, Col, DropdownButton, Dropdown} from 'react-bootstrap';
+import { Router, Link } from '@reach/router'
+import Issuecontent from './Issuecontent';
 
-function Issues() {
+function Issues(props) {
+    const issues=props.issues;
+    console.log(issues);
     return (
-        <div>
-            <div className="content-wrapper" id="Issues" name="issues">
-
-                <div className="mobile-layover"></div>
-                <div className="alret-wrapper">
-                    <nav className="breadcrumbs container-fulid container-limited" role="navigation">
-                        <div className="breadcrumbs-container">
-                            <button className="toggle-mobile-nav" name="button" type="button">
-                                <span className="sr-only">Open Slider</span>
-                                <i aria-hidden="true" data-hidden="true" className="fa-fa-bars"></i>
-                            </button>
-                            <div className="breadcrumbs-links js-title-container">
-                                <ul className="list-unstyled breadcrumbs-list js-breadcrumbs-list">
-                                    <li>
-                                        <a href="/">ranjithbiswas755</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">CL_task</a>
-                                    </li>
-                                    <li>
-                                        <a href="/project">Issues</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                    <div className="d-flex"></div>
-                    <div className=""> </div>
-                </div>
-                <div className="container-fluid container-limited">
-                    <div className="content" id="content-body">
-                        <div className="flash-container flash-conatiner-page sticky">
-                        </div>
-                        <div className="text-content">
-                            <h4> this is an issue tracker</h4>
-                            <p> Issues can be bugs, tasks or ideas to be discussed. Also, issues are searchable and filterable.</p>
-                        </div>
-                        <div className="text-center">
-                            <a className="btn btn-sucess" title="New issue" id="new-issue-link" href="#">New Issue</a>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        <Container>
+            <Row>
+                <Col sm="10"></Col>
+                <Col sm="2">
+                    <Link to="new"><Button variant="success" >New issue</Button></Link>
+                </Col>
+            </Row>
+            <hr />
+            <Row>
+                <DropdownButton id="dropdown-basic-button" title="Recent Searches" variant="Secondary">
+                    <Dropdown.Item href="#/action-1">No search</Dropdown.Item>
+                </DropdownButton>
+            </Row>
+            <hr/>
+            { issues.map((issue,index)=><Issuecontent key={index} issue={issue} index={index} />)}
+            
+        </Container>
     )
 }
 
